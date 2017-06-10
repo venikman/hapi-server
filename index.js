@@ -15,28 +15,15 @@ server.route({
     handler : function (request, reply) {
         return reply(`Hello World\n ${request}`);
     }
-}
-// {
-//     method : 'GET',
-//     path : '/hello/{name}',
-//     config : {
-//         description : 'Return an object with hello message',
-//         validate : {
-//             params : {
-//                 name : Joi.string().min(3).required()
-//             }
-//         },
-//         pre : [],
-//         handler : function (request, reply) {
-//             const name = request.params.name;
-//             return reply({ message : `Hello ${name}` });
-//         },
-//         cache : {
-//             expiresIn : 3600000
-//         }
-//     }
-// }
-);
+});
+
+server.route({
+    method: '*',
+    path: '/{p*}',
+    handler: function(request, reply) {
+        return reply('The page was not found').code(404);
+    }
+});
 
 // extending 
 server.ext('onRequest', function (request, reply) {

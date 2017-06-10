@@ -1,23 +1,23 @@
 {
-  "name": "venik-server",
-  "version": "1.0.0",
-  "description": "my first app",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
-  },
-  "keywords": [
-    "hapi",
-    "javascript",
-    "server"
-  ],
-  "author": "Stanislau Niadbailau",
-  "license": "MIT",
-  "dependencies": {
-    "hapi": "^16.1.1"
-  },
-  "devDependencies": {
-    "blipp": "^2.3.0"
-  }
+    "name": "venik-server",
+    "version": "1.0.0",
+    "description": "my first app",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node index.js"
+    },
+    "keywords": [
+        "hapi",
+        "javascript",
+        "server"
+    ],
+    "author": "Stanislau Niadbailau",
+    "license": "MIT",
+    "dependencies": {
+        "hapi": "^16.1.1"
+    },
+    "devDependencies": {
+        "blipp": "^2.3.0"
+    }
 }
