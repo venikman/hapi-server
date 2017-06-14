@@ -23,12 +23,14 @@ server.register(Inert, (err) => {
             }
         }
     });
-    
 
+});
+
+server.register(Blipp);
 
     // extending 
     server.ext('onRequest', function (request, reply) {
-        console.log(`request received: ${request}.`);
+        console.log('request received');
         return reply.continue();
     });
     server.ext('onPostHandler', function (request, reply) {
@@ -43,7 +45,7 @@ server.register(Inert, (err) => {
     server.start((err) => {
         console.log(`Server running at: ${server.info.uri}`);
     })
-});
+// });
 
 
 
