@@ -10,7 +10,7 @@ server.connection({
     host : '127.0.0.1'
 });
 
-server.register(Inert, (err) => {
+server.register([Blipp, Inert], (err) => {
 
     //server static html and image files
     server.route({
@@ -19,16 +19,10 @@ server.register(Inert, (err) => {
         handler: {
             directory: {
                 path: Path.join( __dirname, 'public'),
-                listing: true
+                listing: false
             }
         }
     });
-
-});
-
-server.register(Blipp);
-
-    // extending 
     server.ext('onRequest', function (request, reply) {
         console.log('request received');
         return reply.continue();
@@ -45,8 +39,4 @@ server.register(Blipp);
     server.start((err) => {
         console.log(`Server running at: ${server.info.uri}`);
     })
-// });
-
-
-
-
+});
