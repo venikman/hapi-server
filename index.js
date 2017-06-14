@@ -15,7 +15,15 @@ server.route({
     handler : function (request, reply) {
         return reply(`Hello World\n ${request}`);
     }
-}
+});
+
+server.route({
+     method: '*',
+     path: '/{p*}',
+     handler: function(request, reply) {
+         return reply('The page was not found').code(404);
+     }
+ });
 // {
 //     method : 'GET',
 //     path : '/hello/{name}',
@@ -36,7 +44,7 @@ server.route({
 //         }
 //     }
 // }
-);
+
 
 // extending 
 server.ext('onRequest', function (request, reply) {
