@@ -1,4 +1,4 @@
-const Hapi =require('hapi');
+const Hapi = require('hapi');
 const Blipp = require('blipp');
 const Inert = require('inert');
 const Path = require('path');
@@ -6,8 +6,8 @@ const Path = require('path');
 const server = new Hapi.Server();
 
 server.connection({
-    port : 1337,
-    host : '127.0.0.1'
+    port: 1337,
+    host: '127.0.0.1'
 });
 
 server.register([Blipp, Inert], (err) => {
@@ -18,16 +18,16 @@ server.register([Blipp, Inert], (err) => {
         path: '/{files*}',
         handler: {
             directory: {
-                path: Path.join( __dirname, 'public'),
+                path: Path.join(__dirname, 'public'),
                 listing: false
             }
         }
     });
-    server.ext('onRequest', function (request, reply) {
+    server.ext('onRequest', function(request, reply) {
         console.log('request received');
         return reply.continue();
     });
-    server.ext('onPostHandler', function (request, reply) {
+    server.ext('onPostHandler', function(request, reply) {
         const response = request.response;
         if (response.isBoom && response.output.statusCode === 404) {
             return reply.file('./404.html').code(404);
