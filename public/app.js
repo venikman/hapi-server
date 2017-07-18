@@ -1,4 +1,5 @@
 'use strict';
+const rainbow = require('./rainbow');
 
 function playSound(e) {
   console.log('trying to play sound');
@@ -21,3 +22,5 @@ keys.forEach( key => key.addEventListener('transitionend', removeTransition));
 
 window.addEventListener('keydown', playSound);
  var stas = console.log('hi');
+
+ rainbow();
