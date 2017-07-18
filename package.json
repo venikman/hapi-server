@@ -4,7 +4,7 @@
   "description": "my first app",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "ava",
     "start": "node index.js"
   },
   "keywords": [
@@ -19,6 +19,7 @@
     "inert": "^4.2.0"
   },
   "devDependencies": {
+    "ava": "^0.21.0",
     "blipp": "^2.3.0"
   }
 }
