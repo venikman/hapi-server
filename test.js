@@ -9,7 +9,13 @@ server.connection({
     host: '127.0.0.1'
 });
 
-test('checking protocol', async t => {
-    server.start();
-    t.is(server.info.protocol, 'http')
-})
+// test('checking protocol', async t => {
+//     server.start();
+//     t.is(server.info.protocol, 'http')
+// })
+
+server.inject('/404', res => {
+    test('checking 404 page', async t => {
+        t.is(res.statusCode, 404)
+    })
+});
