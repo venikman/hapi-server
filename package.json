@@ -16,9 +16,9 @@
   "license": "MIT",
   "dependencies": {
     "handlebars": "^4.0.10",
-    "hapi": "^16.1.1",
-    "inert": "^4.2.0",
-    "vision": "^4.1.1"
+    "hapi": "^17.0.0",
+    "inert": "^5.0.0",
+    "vision": "^5.0.0"
   },
   "devDependencies": {
     "ava": "^0.21.0",
